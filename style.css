@@ -1,1 +1,213 @@
+body {
+  margin: 0;
+ font-family: "Bungee", sans-serif;
+  color: #ffffff;
 
+  /* Animated background */
+  background:
+    repeating-linear-gradient(
+      0deg,
+      #0f0f0f 0px, #0f0f0f 150px,
+      #1a1a1a 150px, #1a1a1a 300px,
+      #ff4d6d 300px, #ff4d6d 450px,
+      #ff1e56 450px, #ff1e56 600px
+    );
+  background-size: 100% 600px;
+  animation: moveLines 30s linear infinite;
+
+  /* Ensure content appears on top */
+  position: relative;
+  z-index: 0;
+}
+
+@keyframes moveLines {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 600px;
+  }
+}
+
+/* Sections stay solid black and on top */
+section {
+  background: #0f0f0f;
+  color: #ffffff;
+  margin: 40px auto;
+  padding: 40px;
+  width: 80%;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 1; /* ensures text stays above background */
+  border-style: solid;
+  border-width: 5px;
+}
+
+section h1 {
+  color: #ff4d6d;
+}
+
+nav {
+  background: black;
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.home:hover {
+    transform: scale(1.03);
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ff4d6d;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.nav-links a:hover {
+  color: #ff4d6d;
+  transform: scale(1.03);
+}
+
+section {
+  background: white;
+  margin: 50px auto;
+  padding: 40px;
+  width: 80%;
+  border-radius: 15px;
+}
+p{
+   color: black;
+   font-family: "Bungee", sans-serif;
+}
+
+.button-link{
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: darkgrey; /* change color of button */
+  color: white; /* Text color */
+  text-decoration: none; /* removes the underline */
+  font-weight: bold;
+  border-radius: 8px; 
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+}
+
+.button-link:hover {
+  background-color: grey; 
+  transform: translateY(-2px); /* lift animation  */
+  box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+}
+
+.button-link:active {
+  transform: translateY(0); /* press animation */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.search-section {
+  max-width: 700px;
+  margin: 120px auto;
+  padding: 50px;
+  background: #111;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.search-section h1 {
+  color: #ff4d6d;
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.search-section p {
+  color: #ccc;
+  margin-bottom: 30px;
+}
+
+/* SEARCH BOX */
+.search-box {
+  display: flex;
+  gap: 10px;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+  background: #1a1a1a;
+  color: #888;
+  font-size: 16px;
+}
+
+.search-box button {
+  padding: 15px 25px;
+  border-radius: 10px;
+  border: none;
+  background: #ff1e56;
+  color: white;
+  font-size: 16px;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* NOTICE BOX */
+.notice {
+  margin-top: 30px;
+  padding: 20px;
+  border-left: 4px solid #ff4d6d;
+  background: #1a1a1a;
+  border-radius: 8px;
+}
+
+.notice p {
+  color: #aaa;
+  font-size: 14px;
+}
+.settings-section {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #111;
+  border-radius: 8px;
+}
+
+.settings-section h2 {
+  margin-top: 0;
+}
+
+.settings-section button {
+  padding: 8px 14px;
+  background-color: #444;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.settings-section button:hover {
+  background-color: #666;
+}
+
+.settings-section .note {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+.bungee-regular {
+  font-family: "Bungee", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
