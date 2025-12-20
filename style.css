@@ -1,48 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
 body {
   margin: 0;
- font-family: "Bungee", sans-serif;
+  font-family: "Lexend", sans-serif;
   color: #ffffff;
-
-  /* Animated background */
-  background:
-    repeating-linear-gradient(
-      0deg,
-      #0f0f0f 0px, #0f0f0f 150px,
-      #1a1a1a 150px, #1a1a1a 300px,
-      #ff4d6d 300px, #ff4d6d 450px,
-      #ff1e56 450px, #ff1e56 600px
-    );
-  background-size: 100% 600px;
-  animation: moveLines 30s linear infinite;
-
-  /* Ensure content appears on top */
-  position: relative;
-  z-index: 0;
+  background-color: #000;
 }
 
-@keyframes moveLines {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 0 600px;
-  }
-}
-
-/* Sections stay solid black and on top */
-section {
-  background: #0f0f0f;
-  color: #ffffff;
-  margin: 40px auto;
-  padding: 40px;
-  width: 80%;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-  position: relative;
-  z-index: 1; /* ensures text stays above background */
-  border-style: solid;
-  border-width: 5px;
-}
+/* Animated background */
 
 section h1 {
   color: #ff4d6d;
@@ -55,9 +20,11 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 0 10px 15px rgba(255, 77, 109, 0.2);
 }
+
 .home:hover {
-    transform: scale(1.03);
+  transform: scale(1.03);
 }
 
 .logo {
@@ -71,7 +38,7 @@ nav {
   text-decoration: none;
   margin-left: 20px;
   font-weight: bold;
-  font-size: 25px;
+  font-size: 15px;
 }
 
 .nav-links a:hover {
@@ -80,42 +47,51 @@ nav {
 }
 
 section {
-  background: white;
+  background: black;
   margin: 50px auto;
   padding: 40px;
   width: 80%;
   border-radius: 15px;
-}
-p{
-   color: black;
-   font-family: "Bungee", sans-serif;
+  border-style: solid;
+  border-width: 3px;
+  border-color: #ccc;
 }
 
-.button-link{
+p {
+  color: #ccc;
+}
+
+h3 {
+  color: white;
+  font-family: "Lexend", sans-serif;
+}
+
+.button-link {
   display: inline-block;
-  padding: 12px 24px;
-  background-color: darkgrey; /* change color of button */
-  color: white; /* Text color */
-  text-decoration: none; /* removes the underline */
+  margin: 4px;
+  padding: 15px;
+  background-color: #1c1c1c;
+  color: white;
   font-weight: bold;
-  border-radius: 8px; 
-  transition: background-color 0.3s, transform 0.2s;
+  font-size: 24px;
+  border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   border-style: solid;
   border-width: 2px;
-  border-color: black;
+  border-color: #ff4d6d;
 }
 
 .button-link:hover {
-  background-color: grey; 
-  transform: translateY(-2px); /* lift animation  */
+  background-color: #555555;
+  transform: translateY(-2px);
   box-shadow: 0 6px 8px rgba(0,0,0,0.15);
 }
 
 .button-link:active {
-  transform: translateY(0); /* press animation */
+  transform: translateY(0);
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
+
 .search-section {
   max-width: 700px;
   margin: 120px auto;
@@ -177,6 +153,7 @@ p{
   color: #aaa;
   font-size: 14px;
 }
+
 .settings-section {
   margin-top: 20px;
   padding: 15px;
@@ -206,8 +183,18 @@ p{
   font-size: 0.9rem;
   color: #aaa;
 }
-.bungee-regular {
-  font-family: "Bungee", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+
+/* background */
+#vanta-bg {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+
+/* flow background */
+#content {
+  position: relative;
+  z-index: 1;
 }

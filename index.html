@@ -3,11 +3,16 @@
 <head>
   <title>Gaming Realm | Home</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.topology.min.js"></script>
 </head>
 <body>
+
+<!-- VANTA BACKGROUND -->
+  <div id="vanta-bg"></div>
+
+  <!-- PAGE CONTENT -->
+  <div id="content">
 
 <nav>
   <div class="logo">Gaming Realm</div>
@@ -15,30 +20,29 @@
     <a href="index.html">Home</a>
     <a href="games.html">Games</a>
     <a href="apps.html">Apps</a>
-    <a href="searches.html">Proxy</a>
-    <a href="eagle.html">Eaglercraft</a>
+    <a href="search.html">Proxy</a>
     <a href="more.html">More</a>
     <a href="settings.html">Settings</a>
   </div>
 </nav>
 
 <section>
-  <center><h1>Welcome to Gaming Realm</h1></center>
+  <center><h1 style="font-size: 50px;">Welcome to Gaming Realm</h1></center>
 
   <!-- button -->
   <center>
-    <a href="games.html" class="button-link">Game Unblocked</a>
+    <a href="games.html"><button class="button-link">Game Unblocked</button></a>
   </center>
 
   <!-- about:blank button -->
-  <center style="margin-top: 10px;">
-    <button id="open-aboutblank" class="button-link">About:blank tab</button>
+  <center>
+   <button id="open-aboutblank" class="button-link">About: blank tab</button>
   </center>
 </section>
 
 <script>
   document.getElementById('open-aboutblank').addEventListener('click', () => {
-    const siteUrl = window.location.origin + '/index.html';
+    const siteUrl = window.location.origin + 'index.html';
 
     const win = window.open('about:blank', '_blank');
     if (!win) {
@@ -76,6 +80,17 @@
   });
 </script>
 
-
+<script>
+    VANTA.TOPOLOGY({
+      el: "#vanta-bg",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      color: 0xbb1444,
+      backgroundColor: 0x000000,
+      scale: 1,
+      scaleMobile: 1
+    });
+  </script>
 </body>
 </html>
