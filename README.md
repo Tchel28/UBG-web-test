@@ -1,2 +1,0 @@
-# GameAtlas
-Gaming Website ig

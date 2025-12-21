@@ -3,16 +3,9 @@
 <head>
   <title>Gaming Realm | Home</title>
   <link rel="stylesheet" href="style.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.topology.min.js"></script>
 </head>
 <body>
 
-<!-- VANTA BACKGROUND -->
-  <div id="vanta-bg"></div>
-
-  <!-- PAGE CONTENT -->
-  <div id="content">
 
 <nav>
   <div class="logo">Gaming Realm</div>
@@ -31,12 +24,12 @@
 
   <!-- button -->
   <center>
-    <a href="games.html"><button class="button-link">Game Unblocked</button></a>
+    <a href="games.html"><button>Game Unblocked</button></a>
   </center>
 
   <!-- about:blank button -->
   <center>
-   <button id="open-aboutblank" class="button-link">About: blank tab</button>
+   <button id="open-aboutblank">About: blank tab</button>
   </center>
 </section>
 
@@ -80,17 +73,5 @@
   });
 </script>
 
-<script>
-    VANTA.TOPOLOGY({
-      el: "#vanta-bg",
-      mouseControls: true,
-      touchControls: true,
-      gyroControls: false,
-      color: 0xbb1444,
-      backgroundColor: 0x000000,
-      scale: 1,
-      scaleMobile: 1
-    });
-  </script>
-</body>
+
 </html>

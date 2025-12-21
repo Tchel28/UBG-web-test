@@ -5,6 +5,10 @@ body {
   font-family: "Lexend", sans-serif;
   color: #ffffff;
   background-color: #000;
+  background-image: url('assets/images/bg.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
 }
 
 /* Animated background */
@@ -57,7 +61,13 @@ section {
   border-color: #ccc;
 }
 
+.gsection {
+  height: 70vh;
+  overflow-y: auto;
+}
+
 p {
+  font-family: "Lexend", sans-serif;
   color: #ccc;
 }
 
@@ -65,14 +75,12 @@ h3 {
   color: white;
   font-family: "Lexend", sans-serif;
 }
-
-.button-link {
+button {
   display: inline-block;
   margin: 4px;
   padding: 15px;
   background-color: #1c1c1c;
   color: white;
-  font-weight: bold;
   font-size: 24px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
@@ -81,13 +89,13 @@ h3 {
   border-color: #ff4d6d;
 }
 
-.button-link:hover {
+button:hover {
   background-color: #555555;
   transform: translateY(-2px);
   box-shadow: 0 6px 8px rgba(0,0,0,0.15);
 }
 
-.button-link:active {
+button:active {
   transform: translateY(0);
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
@@ -198,3 +206,5 @@ h3 {
   position: relative;
   z-index: 1;
 }
+
+

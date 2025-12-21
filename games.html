@@ -3,19 +3,107 @@
 <head>
   <title>Gaming Realm | Games</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.topology.min.js"></script>
+ <style>
+        .gheading {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+       }
+      .game-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 60px 150px;
+        }
+        .game-button {
+            position: relative;
+            background-color: #000000;
+            border-radius: 10px;
+            width: 180px;
+            height: 180px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            overflow: hidden;
+            transition: all 0.2s;
+            
+        }
+        .game-button img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: opacity 0.3s ease;
+           
+
+        }
+        .game-button:hover img {
+            opacity: 0.5;
+          
+        }
+      .game-button:hover {
+             transform: scale(0.98);
+             box-shadow: 0px 0px 14px #ff4d6d;
+          
+        }
+        .overlay-text {
+            margin: 10px, 0px;
+            position: absolute;
+            color: white;
+           font-family: "Lexend", sans-serif;
+            font-size: 18px;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+            z-index: 1;
+            width: 100%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .game-button:hover .overlay-text {
+            opacity: 1;
+        }
+        .game-title {
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            font-size: 36px;
+            margin: 10px 0 0 0;
+        }
+        .games-title {
+            text-align: center;
+            color: white;
+            font-size: 24px;
+            margin-bottom: 20px;
+            
+        }
+        .search-bar-container {
+            display: flex;
+            padding-top: 60px;
+            }
+        .search-bar {
+            opacity: 0.7;
+           position: sticky;
+           top: 20px;
+            width: 50%;
+            padding: 10px;
+            border-radius: 20px;
+            border: 2px solid #000;
+            color: black;
+            font-family: "Lexend", sans-serif;
+            font-size: 16px;
+            z-index: 2;
+          }
+    </style>
 </head>
 <body>
 
-<!-- FIXED VANTA BACKGROUND -->
-  <div id="vanta-bg"></div>
-
-  <!-- PAGE CONTENT -->
-  <div id="content">
 
 <nav>
   <div class="logo">Gaming Realm</div>
@@ -29,23 +117,1138 @@
   </div>
 </nav>
 
-<section>
-  <h1>Games</h1>
-  <p>Featured games, updates, and releases will go here.</p>
-</section>
+<section class="gsection">
 
-<script>
-    VANTA.TOPOLOGY({
-      el: "#vanta-bg",
-      mouseControls: true,
-      touchControls: true,
-      gyroControls: false,
-      color: 0xbb1444,
-      backgroundColor: 0x000000,
-      scale: 1,
-      scaleMobile: 1
-    });
-  </script>
+
+
+<div class="gheading">
+
+    <div>
+  <h1>Games</h1>
+</div>
+
+
+
+
+<div class="search-bar-container">
+
+
+
+</div>
+
+        <input type="text" id="gameSearch" class="search-bar" placeholder="Search for a game..." oninput="filterGames()">
+    </div>
+
+
+
+<div class="game-grid">
+  
+       <div class="game-button">
+            <a href="assets/games/minecraft-1.12/ ">
+                <img src="assets/gameimages/minecraft-1.12.jpg" alt="">
+                <div class="overlay-text">Minecraft 1.12</div>
+            </a> </div>
+    
+       <div class="game-button">
+            <a href="assets/games/eaglercraft/ ">
+                <img src="assets/gameimages/minecraft.jpg" alt="">
+                <div class="overlay-text">Minecraft 1.8</div>
+            </a> </div>
+
+       <div class="game-button">
+            <a href="assets/fnaf.html">
+                <img src="assets/gameimages/fnaf.png" alt="">
+                <div class="overlay-text">FNaF</div>
+            </a> </div>
+
+    <div class="game-button">
+            <a href="iframe.html?url=assets/games/undertale">
+                <img src="assets/gameimages/undertale.png" alt="">
+                <div class="overlay-text">Undertale</div>
+            </a> </div>
+  
+      <div class="game-button">
+            <a href="iframe.html?url=https://webgltest-17af1.firebaseapp.com/">
+                <img src="assets/gameimages/smashkarts.png" alt="">
+                <div class="overlay-text">Smash Karts</div>
+            </a> </div>
+
+<div class="game-button">
+            <a href="/staticiframe.html.html#https://deathbyai.gg/">
+                <img src="assets/gameimages/deathbyai.jpeg" alt="">
+                <div class="overlay-text">Death by AI</div>
+            </a> </div>
+
+      <div class="game-button">
+            <a href="assets/buildnowgg.html">
+                <img src="assets/gameimages/buildnowgg.webp" alt="">
+                <div class="overlay-text">Buildnow.gg</div>
+            </a> </div>
+      
+    <div class="game-button">
+            <a href="iframe.html?url=assets/games/yohoho-io/">
+                <img src="assets/gameimages/yohohoio.png" alt="">
+                <div class="overlay-text">Yohoho.io</div>
+            </a> </div>
+      
+     <div class="game-button">
+            <a href="iframe.html?url=assets/games/poly-track/ ">
+                <img src="assets/gameimages/polytrack.png" alt="">
+                <div class="overlay-text">Poly Track</div>
+            </a> </div>
+
+        <div class="game-button">
+            <a href="iframe.html?url=assets/games/slow-roads/ ">
+                <img src="assets/gameimages/slowroads.png" alt="">
+                <div class="overlay-text">Slow Roads</div>
+            </a> </div>
+      
+       <div class="game-button">
+            <a href="iframe.html?url=assets/games/under-the-red-sky/ ">
+                <img src="assets/gameimages/undertheredsky.png" alt="">
+                <div class="overlay-text">Under the Red Sky</div>
+            </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/animal-arena/ ">
+                <img src="assets/gameimages/animalarena.png" alt="">
+                <div class="overlay-text">Animal Arena</div>
+            </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/poor-bunny/ ">
+                <img src="assets/gameimages/poorbunny.png" alt="">
+                <div class="overlay-text">Poor Bunny</div>
+            </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/ducklings-io/ ">
+                <img src="assets/gameimages/ducklingsio.png" alt="">
+                <div class="overlay-text">Ducklings.io</div>
+            </a> </div>
+
+       <div class="game-button">
+            <a href="iframe.html?url=assets/games/bad-piggies/ ">
+                <img src="assets/gameimages/badpiggies.png" alt="">
+                <div class="overlay-text">Bad Piggies</div>
+            </a> </div>
+
+   <div class="game-button">
+            <a href="/assets/games/angry-birds/ ">
+                <img src="assets/gameimages/angrybirds.png" alt="">
+                <div class="overlay-text">Angry Birds</div>
+            </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/blumgi-racers/ ">
+                <img src="assets/gameimages/blumgiracers.png" alt="">
+                <div class="overlay-text">Blumgi Racers</div>
+            </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/blumgi-soccer/ ">
+                <img src="assets/gameimages/blumgisoccer.png" alt="">
+                <div class="overlay-text">Blumgi Soccer</div>
+            </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/blumgi-dragon/ ">
+                <img src="assets/gameimages/blumgidragon.png" alt="">
+                <div class="overlay-text">Blumgi Dragon</div>
+            </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/blumgi-bloom/ ">
+                <img src="assets/gameimages/blumgibloom.png" alt="">
+                <div class="overlay-text">Blumgi Bloom</div>
+            </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/blumgi-ball/ ">
+                <img src="assets/gameimages/blumgiball.png" alt="">
+                <div class="overlay-text">Blumgi Ball</div>
+            </a> </div>
+            
+              <div class="game-button">
+            <a href="iframe.html?url=assets/games/blumgi-castle/ ">
+                <img src="assets/gameimages/blumgicastle.png" alt="">
+                <div class="overlay-text">Blumgi Castle</div>
+</a> </div>
+      
+              <div class="game-button">
+            <a href="iframe.html?url=assets/games/blumgi-rocket/ ">
+                <img src="assets/gameimages/blumgirocket.png" alt="">
+                <div class="overlay-text">Blumgi Rocket</div>
+</a> </div>
+      
+              <div class="game-button">
+            <a href="iframe.html?url=assets/games/blumgi-slime/ ">
+                <img src="assets/gameimages/blumgislime.png" alt="">
+                <div class="overlay-text">Blumgi Slime</div>
+</a> </div>
+      
+              <div class="game-button">
+            <a href="iframe.html?url=assets/games/swingo/ ">
+                <img src="assets/gameimages/swingo.png" alt="">
+                <div class="overlay-text">Swingo</div>
+</a> </div>
+      
+              <div class="game-button">
+            <a href="iframe.html?url=assets/games/zombie-rush/ ">
+                <img src="assets/gameimages/zombierush.png" alt="">
+                <div class="overlay-text">Zombie Rush</div>
+</a> </div>
+      
+              <div class="game-button">
+            <a href="iframe.html?url=assets/games/animals-volleyball/ ">
+                <img src="assets/gameimages/animalsvolleyball.png" alt="">
+                <div class="overlay-text">Animals Volleyball</div>              
+</a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/dreadhead-parkour/ ">
+                <img src="assets/gameimages/dreadheadparkour.png" alt="">
+                <div class="overlay-text">Dreadhead Parkour</div>              
+</a> </div>
+      
+              <div class="game-button">
+            <a href="iframe.html?url=assets/games/jump-only/ ">
+                <img src="assets/gameimages/jumponly.png" alt="">
+                <div class="overlay-text">Jump Only</div>
+</a> </div>
+              <div class="game-button">
+            <a href="iframe.html?url=assets/games/blumgi-ball/ ">
+                <img src="assets/gameimages/blumgiball.png" alt="">
+                <div class="overlay-text">Blumgi Ball</div>
+</a> </div>
+              <div class="game-button">
+            <a href="iframe.html?url=assets/games/chicken-merge-2/ ">
+                <img src="assets/gameimages/chickenmerge2.png"" alt="">
+                <div class="overlay-text">Chicken Merge 2</div>
+</a> </div>
+              <div class="game-button">
+            <a href="iframe.html?url=assets/games/chicken-merge/ ">
+                <img src="assets/gameimages/chickenmerge.png" alt="">
+                <div class="overlay-text">Chicken Merge</div>
+            </a> </div>
+              <div class="game-button">
+            <a href="iframe.html?url=assets/games/gobattle/ ">
+                <img src="assets/gameimages/gobattle.png" alt="">
+                <div class="overlay-text">GoBattle</div>
+              </a> </div>
+              <div class="game-button">
+            <a href="iframe.html?url=assets/games/dadish-3d/ ">
+                <img src="assets/gameimages/dadish3d.png" alt="">
+                <div class="overlay-text">Dadish 3D</div>
+              </a> </div>
+              <div class="game-button">
+            <a href="iframe.html?url=assets/games/dadish/ ">
+                <img src="assets/gameimages/dadish.png" alt="">
+                <div class="overlay-text">Dadish</div>
+</a> </div>
+              <div class="game-button">
+            <a href="iframe.html?url=assets/games/dadish-2/ ">
+                <img src="assets/gameimages/dadish2.png" alt="">
+                <div class="overlay-text">Dadish 2</div>
+</a> </div>
+              <div class="game-button">
+            <a href="iframe.html?url=assets/games/dadish-3/ ">
+                <img src="assets/gameimages/dadish3.png" alt="">
+                <div class="overlay-text">Dadish 3</div>
+</a> </div>
+              <div class="game-button">
+            <a href="iframe.html?url=assets/games/super-fowlst/ ">
+                <img src="assets/gameimages/superfowlst.png" alt="">
+                <div class="overlay-text">Super Fowlst</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/super-fowlst-2/ ">
+                <img src="assets/gameimages/superfowlst2.png" alt="">
+                <div class="overlay-text">Super Fowlst 2</div>
+                </a> </div>
+
+          <div class="game-button">
+            <a href="iframe.html?url=assets/games/tag/ ">
+                <img src="assets/gameimages/tag.png" alt="">
+                <div class="overlay-text">Tag</div>
+                </a> </div>
+
+           <div class="game-button">
+            <a href="iframe.html?url=assets/games/tag-2/ ">
+                <img src="assets/gameimages/tag2.png" alt="">
+                <div class="overlay-text">Tag 2</div>
+                </a> </div>
+      
+          <div class="game-button">
+            <a href="iframe.html?url=assets/games/shadow-trick/ ">
+                <img src="assets/gameimages/shadowtrick.png" alt="">
+                <div class="overlay-text">Shadow Trick</div>
+                </a> </div>
+
+          <div class="game-button">
+            <a href="iframe.html?url=assets/games/zooplop/ ">
+                <img src="assets/gameimages/zooplop.png" alt="">
+                <div class="overlay-text">Zooplop</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/physibox/ ">
+                <img src="assets/gameimages/physibox.png" alt="">
+                <div class="overlay-text">Physibox</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/block-blast/">
+                <img src="assets/gameimages/blockblast.png" alt="">
+                <div class="overlay-text">Block Blast</div>
+                </a> </div>
+  
+<div class="game-button">
+            <a href="iframe.html?url=assets/games/flappy-bird/">
+                <img src="assets/gameimages/flappybird.webp" alt="">
+                <div class="overlay-text">Flappy Bird</div>
+            </a> </div>
+
+<div class="game-button">
+            <a href="iframe.html?url=assets/games/cut-the-rope/">
+                <img src="assets/gameimages/cuttherope.jpg" alt="">
+                <div class="overlay-text">Cut The Rope</div>
+            </a> </div>
+      
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/geometry-dash/chooselink.html">
+                <img src="assets/gameimages/geometrydash.png" alt="">
+                <div class="overlay-text">Geometry Dash</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/water-polo-ragdoll/ ">
+                <img src="assets/gameimages/waterpoloragdoll.png" alt="">
+                <div class="overlay-text">Water Polo Ragdoll</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/space-wars-battleground/ ">
+                <img src="assets/gameimages/spacewarsbattleground.png" alt="">
+                <div class="overlay-text">Space Wars Battleground</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/level-devil/">
+                <img src="assets/gameimages/leveldevil.png" alt="">
+                <div class="overlay-text">Level Devil</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/karlson/">
+                <img src="assets/gameimages/karlson.webp" alt="">
+                <div class="overlay-text">Karlson</div>
+                </a> </div>
+
+   <div class="game-button">
+            <a href="iframe.html?url=/staticiframe.html.html#https://shellshock.io/">
+                <img src="assets/gameimages/shellshockers.jpg" alt="">
+                <div class="overlay-text">Shell Shockers</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/armed-forces-io/ ">
+                <img src="assets/gameimages/armedforcesio.png" alt="">
+                <div class="overlay-text">ArmedForces.io</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/ks-2-teams/ ">
+                <img src="assets/gameimages/ks2teams.png" alt="">
+                <div class="overlay-text">KS 2 Teams</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/subway-surfers/choosegame.html">
+                <img src="assets/gameimages/subwaysurfers.png" alt="">
+                <div class="overlay-text">Subway Surfers</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/super-tunnel-rush/ ">
+                <img src="assets/gameimages/supertunnelrush.png" alt="">
+                <div class="overlay-text">Super Tunnel Rush</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/unicycle-legend/ ">
+                <img src="assets/gameimages/unicyclelegend.png" alt="">
+                <div class="overlay-text">Unicycle Legend</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/unicycle-hero/ ">
+                <img src="assets/gameimages/unicyclehero.png" alt="">
+                <div class="overlay-text">Unicycle Hero</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/goober-world/ ">
+                <img src="assets/gameimages/gooberworld.png" alt="">
+                <div class="overlay-text">Goober World</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/bobble/ ">
+                <img src="assets/gameimages/bobble.png" alt="">
+                <div class="overlay-text">Bobble</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="/staticiframe.html.html#https://html-classic.itch.zone/html/12710809/Production%20WebGL/index.html">
+                <img src="assets/gameimages/superautopets.jpg" alt="">
+                <div class="overlay-text">Super Auto Pets</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/merge-the-numbers/ ">
+                <img src="assets/gameimages/mergethenumbers.png" alt="">
+                <div class="overlay-text">Merge the Numbers</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/watermelon-game/ ">
+                <img src="assets/gameimages/watermelongame.png" alt="">
+                <div class="overlay-text">Watermelon Game</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/choppy-orc/ ">
+                <img src="assets/gameimages/choppyorc.png" alt="">
+                <div class="overlay-text">Choppy Orc</div>
+                </a> </div>
+
+          <div class="game-button">
+            <a href="iframe.html?url=assets/games/battle-wheels/ ">
+                <img src="assets/gameimages/battlewheels.png" alt="">
+                <div class="overlay-text">Battle Wheels</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/race-survival-arena-king/ ">
+                <img src="assets/gameimages/racesurvivalarenaking.png" alt="">
+                <div class="overlay-text">Race Survival Arena King</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/push-your-luck/ ">
+                <img src="assets/gameimages/pushyourluck.png" alt="">
+                <div class="overlay-text">Push Your Luck</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/gobble/ ">
+                <img src="assets/gameimages/gobble.png" alt="">
+                <div class="overlay-text">Gobble</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/monster-tracks/ ">
+                <img src="assets/gameimages/monstertracks.png" alt="">
+                <div class="overlay-text">Monster Tracks</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/drive-mad/ ">
+                <img src="assets/gameimages/drivemad.png" alt="">
+                <div class="overlay-text">Drive Mad</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/recoil/ ">
+                <img src="assets/gameimages/recoil.png" alt="">
+                <div class="overlay-text">Recoil</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/speed-king/ ">
+                <img src="assets/gameimages/speedking.png" alt="">
+                <div class="overlay-text">Speed King</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/bank-robbery/ ">
+                <img src="assets/gameimages/bankrobbery.png" alt="">
+                <div class="overlay-text">Bank Robbery</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/bank-robbery-2/ ">
+                <img src="assets/gameimages/bankrobbery2.png" alt="">
+                <div class="overlay-text">Bank Robbery 2</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/bank-robbery-3/ ">
+                <img src="assets/gameimages/bankrobbery3.png" alt="">
+                <div class="overlay-text">Bank Robbery 3</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/gladihoppers/ ">
+                <img src="assets/gameimages/gladihoppers.png" alt="">
+                <div class="overlay-text">Gladihoppers</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/monkey-mart/ ">
+                <img src="assets/gameimages/monkeymart.png" alt="">
+                <div class="overlay-text">Monkey Mart</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/moto-x3m/ ">
+                <img src="assets/gameimages/motox3m.jpg" alt="">
+                <div class="overlay-text">MotoX3M</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/motox3m2/ ">
+                <img src="assets/gameimages/motox3m2.jpg" alt="">
+                <div class="overlay-text">MotoX3M 2</div>
+                </a> </div>
+      
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/motox3m-pool/ ">
+                <img src="assets/gameimages/motox3mpoolparty.jpg" alt="">
+                <div class="overlay-text">MotoX3M Pool Party</div>
+                </a> </div>
+
+      
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/motox3m-spooky/ ">
+                <img src="assets/gameimages/motox3mspooky.jpg" alt="">
+                <div class="overlay-text">MotoX3M Spooky</div>
+                </a> </div>
+   
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/motox3m-winter/ ">
+                <img src="assets/gameimages/motox3mwinter.jpg" alt="">
+                <div class="overlay-text">MotoX3M Winter</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/vex-x3m/ ">
+                <img src="assets/gameimages/vexx3m.png" alt="">
+                <div class="overlay-text">Vex X3M</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/vex-8/ ">
+                <img src="assets/gameimages/vex8.png" alt="">
+                <div class="overlay-text">Vex 8</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/vex-7/ ">
+                <img src="assets/gameimages/vex7.png" alt="">
+                <div class="overlay-text">Vex 7</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/vex-6/ ">
+                <img src="assets/gameimages/vex6.png" alt="">
+                <div class="overlay-text">Vex 6</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/vex-5/ ">
+                <img src="assets/gameimages/vex5.png" alt="">
+                <div class="overlay-text">Vex 5</div>
+                </a> </div>
+
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/vex-4/ ">
+                <img src="assets/gameimages/vex4.png" alt="">
+                <div class="overlay-text">Vex 4</div>
+                </a> </div>
+
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/vex-4/ ">
+                <img src="assets/gameimages/vex4.png" alt="">
+                <div class="overlay-text">Vex 4</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/vex-3/ ">
+                <img src="assets/gameimages/vex3.png" alt="">
+                <div class="overlay-text">Vex 3</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/rocket-soccer-derby/ ">
+                <img src="assets/gameimages/rocketsoccerderby.png" alt="">
+                <div class="overlay-text">Rocket Soccer Derby</div>
+                </a> </div>
+
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/crossy-road/ ">
+                <img src="assets/gameimages/crossyroad.png" alt="">
+                <div class="overlay-text">Crossy Road</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/ovo/ ">
+                <img src="assets/gameimages/ovo.png" alt="">
+                <div class="overlay-text">OvO</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/ovo-dimensions/ ">
+                <img src="assets/gameimages/ovodimensions.png" alt="">
+                <div class="overlay-text">OvO Dimensions</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/table-tennis-world-tour/ ">
+                <img src="assets/gameimages/tabletennisworldtour.png" alt="">
+                <div class="overlay-text">Table Tennis World Tour</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/doodle-jump/ ">
+                <img src="assets/gameimages/doodlejump.png" alt="">
+                <div class="overlay-text">Doodle Jump</div>
+                </a> </div>
+
+       <div class="game-button">
+            <a href="iframe.html?url=assets/games/economical/ ">
+                <img src="assets/gameimages/economical.png" alt="">
+                <div class="overlay-text">Economical</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/economical-2/ ">
+                <img src="assets/gameimages/economical2.png" alt="">
+                <div class="overlay-text">Economical 2</div>
+                </a> </div>
+
+       <div class="game-button">
+            <a href="iframe.html?url=assets/games/day-of-meat-castle/ ">
+                <img src="assets/gameimages/dayofmeatcastle.png" alt="">
+                <div class="overlay-text">Day of Meat: Castle</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/day-of-meat-radiation/ ">
+                <img src="assets/gameimages/dayofmeatradiation.png" alt="">
+                <div class="overlay-text">Day of Meat: Radiation</div>
+                </a> </div>
+      
+       <div class="game-button">
+            <a href="assets/firered.html">
+                <img src="assets/gameimages/firered.jpg" alt="">
+                <div class="overlay-text">Pokemon Fire Red</div>
+            </a> </div>
+
+       <div class="game-button">
+            <a href="assets/leafgreen.html">
+                <img src="assets/gameimages/leafgreen.jpg" alt="">
+                <div class="overlay-text">Pokemon Leaf Green</div>
+            </a> </div>
+
+       <div class="game-button">
+            <a href="assets/emerald.html">
+                <img src="assets/gameimages/emerald.jpg" alt="">
+                <div class="overlay-text">Pokemon Emerald</div>
+            </a> </div>
+
+ <div class="game-button">
+            <a href="iframe.html?url=assets/games/mario-64/ ">
+                <img src="assets/gameimages/mario64.jpg" alt="">
+                <div class="overlay-text">Super Mario 64</div>
+                </a> </div>
+  
+       <div class="game-button">
+            <a href="iframe.html?url=assets/games/retro-highway/ ">
+                <img src="assets/gameimages/retrohighway.png" alt="">
+                <div class="overlay-text">Retro Highway</div>
+                </a> </div>
+      
+       <div class="game-button">
+            <a href="iframe.html?url=assets/games/super-liquid-soccer/ ">
+                <img src="assets/gameimages/superliquidsoccer.png" alt="">
+                <div class="overlay-text">Super Liquid Soccer</div>
+                </a> </div>
+
+          <div class="game-button">
+            <a href="iframe.html?url=assets/games/yokai-dungeon/ ">
+                <img src="assets/gameimages/yokaidungeon.png" alt="">
+                <div class="overlay-text">Yokai Dungeon</div>
+                </a> </div>
+
+          <div class="game-button">
+            <a href="iframe.html?url=assets/games/flip-bros/ ">
+                <img src="assets/gameimages/flipbros.png" alt="">
+                <div class="overlay-text">Flip Bros</div>
+                </a> </div>
+
+          <div class="game-button">
+            <a href="iframe.html?url=assets/games/space-major-miner/ ">
+                <img src="assets/gameimages/spacemajorminer.png" alt="">
+                <div class="overlay-text">Space Major Miner</div>
+                </a> </div>
+
+          <div class="game-button">
+            <a href="iframe.html?url=assets/games/retro-bowl/ ">
+                <img src="assets/gameimages/retrobowl.png" alt="">
+                <div class="overlay-text">Retro Bowl</div>
+                </a> </div>
+
+   <div class="game-button">
+            <a href="iframe.html?url=assets/games/retro-bowl-college/ ">
+                <img src="assets/gameimages/retrobowlcollege.png" alt="">
+                <div class="overlay-text">Retro Bowl College</div>
+                </a> </div>
+
+       <div class="game-button">
+            <a href="iframe.html?url=assets/games/tomb-of-the-mask/ ">
+                <img src="assets/gameimages/tombofthemask.png" alt="">
+                <div class="overlay-text">Tomb of the Mask</div>
+                </a> </div>
+      
+<div class="game-button">
+            <a href="iframe.html?url=assets/games/slope/ ">
+                <img src="assets/gameimages/slope.png" alt="">
+                <div class="overlay-text">Slope</div>
+            </a> </div>
+      
+          <div class="game-button">
+            <a href="iframe.html?url=assets/games/poor-eddie/ ">
+                <img src="assets/gameimages/pooreddie.png" alt="">
+                <div class="overlay-text">Poor Eddie</div>
+                </a> </div>
+
+          <div class="game-button">
+            <a href="iframe.html?url=assets/games/drift-boss/ ">
+                <img src="assets/gameimages/driftboss.png" alt="">
+                <div class="overlay-text">Drift Boss</div>
+                </a> </div>
+
+          <div class="game-button">
+            <a href="iframe.html?url=assets/games/sausage-flip/ ">
+                <img src="assets/gameimages/sausageflip.png" alt="">
+                <div class="overlay-text">Sausage Flip</div>
+                </a> </div>
+
+          <div class="game-button">
+            <a href="iframe.html?url=assets/games/stickman-bike/ ">
+                <img src="assets/gameimages/stickmanbike.png" alt="">
+                <div class="overlay-text">Stickman Bike</div>
+                </a> </div>
+
+          <div class="game-button">
+            <a href="iframe.html?url=assets/games/stickman-hook/ ">
+                <img src="assets/gameimages/stickmanhook.png" alt="">
+                <div class="overlay-text">Stickman Hook</div>
+                </a> </div>
+
+          <div class="game-button">
+            <a href="iframe.html?url=assets/games/stickman-hook-halloween/ ">
+                <img src="assets/gameimages/stickmanhookhalloween.png" alt="">
+                <div class="overlay-text">Stickman Hook Halloween</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/paper-io/ ">
+                <img src="assets/gameimages/paperio.jpg" alt="">
+                <div class="overlay-text">Paper.io</div>
+                </a> </div>
+      
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/skiddy-taxi/ ">
+                <img src="assets/gameimages/skiddytaxi.png" alt="">
+                <div class="overlay-text">Skiddy Taxi</div>
+                </a> </div>
+      
+          <div class="game-button">
+            <a href="iframe.html?url=assets/games/snow-rider-3d/ ">
+                <img src="assets/gameimages/snowrider3d.png" alt="">
+                <div class="overlay-text">Snow Rider 3D</div>
+                </a> </div>
+
+       <div class="game-button">
+            <a href="iframe.html?url=assets/games/ages-of-conflict/ ">
+                <img src="assets/gameimages/agesofconflict.jpg" alt="">
+                <div class="overlay-text">Ages of Conflict</div>
+                </a> </div>
+
+          <div class="game-button">
+            <a href="iframe.html?url=assets/games/gold-digger-fr-vr/ ">
+                <img src="assets/gameimages/golddiggerfrvr.png" alt="">
+                <div class="overlay-text">Gold Digger FRVR</div>
+                </a> </div>
+
+          <div class="game-button">
+            <a href="iframe.html?url=assets/games/cow-bay/ ">
+                <img src="assets/gameimages/cowbay.png" alt="">
+                <div class="overlay-text">Cow Bay</div>
+                </a> </div>
+
+          <div class="game-button">
+            <a href="iframe.html?url=assets/games/csgo-clicker/ ">
+                <img src="assets/gameimages/csgoclicker.png" alt="">
+                <div class="overlay-text">CS:GO Clicker</div>
+                </a> </div>
+
+          <div class="game-button">
+            <a href="iframe.html?url=assets/games/soccer-skills-world-cup/ ">
+                <img src="assets/gameimages/soccerskillsworldcup.png" alt="">
+                <div class="overlay-text">Soccer Skills World Cup</div>
+                </a> </div>
+
+          <div class="game-button">
+            <a href="iframe.html?url=assets/games/soccer-skills-euro-cup/ ">
+                <img src="assets/gameimages/soccerskillseurocup.png" alt="">
+                <div class="overlay-text">Soccer Skills Euro Cup</div>
+                </a> </div>
+
+          <div class="game-button">
+            <a href="iframe.html?url=assets/games/soccer-skills-champions-league/ ">
+                <img src="assets/gameimages/soccerskillschampionsleague.png" alt="">
+                <div class="overlay-text">Soccer Skills Champions League</div>
+                </a> </div>
+
+       <div class="game-button">
+            <a href="iframe.html?url=assets/games/basketball-stars/ ">
+                <img src="assets/gameimages/basketballstars.png" alt="">
+                <div class="overlay-text">Basketball Stars</div>
+                </a> </div>
+
+       <div class="game-button">
+            <a href="iframe.html?url=assets/games/basketbros-io/ ">
+                <img src="assets/gameimages/basketbrosio.jpg" alt="">
+                <div class="overlay-text">Basketbros.io</div>
+                </a> </div>
+
+          <div class="game-button">
+            <a href="iframe.html?url=assets/games/space-thing/ ">
+                <img src="assets/gameimages/spacething.png" alt="">
+                <div class="overlay-text">Space Thing</div>
+                </a> </div>
+
+          <div class="game-button">
+            <a href="iframe.html?url=assets/games/tiny-fishing/ ">
+                <img src="assets/gameimages/tinyfishing.png" alt="">
+                <div class="overlay-text">Tiny Fishing</div>
+                </a> </div>
+
+          <div class="game-button">
+            <a href="iframe.html?url=assets/games/turbo-moto-racer/ ">
+                <img src="assets/gameimages/turbomotoracer.png" alt="">
+                <div class="overlay-text">Turbo Moto Racer</div>
+                </a> </div>
+
+          <div class="game-button">
+            <a href="iframe.html?url=assets/games/candy-crush/ ">
+                <img src="assets/gameimages/candycrush.png" alt="">
+                <div class="overlay-text">Candy Crush</div>
+                </a> </div>
+
+          <div class="game-button">
+            <a href="iframe.html?url=assets/games/four-colors/ ">
+                <img src="assets/gameimages/fourcolors.png" alt="">
+                <div class="overlay-text">Four Colors (UNO)</div>
+                </a> </div>
+
+          <div class="game-button">
+            <a href="iframe.html?url=assets/games/master-chess/ ">
+                <img src="assets/gameimages/masterchess.png" alt="">
+                <div class="overlay-text">Master Chess</div>
+                </a> </div>
+
+          <div class="game-button">
+            <a href="iframe.html?url=assets/games/master-checkers/ ">
+                <img src="assets/gameimages/mastercheckers.png" alt="">
+                <div class="overlay-text">Master Checkers</div>
+                </a> </div>
+
+          <div class="game-button">
+            <a href="iframe.html?url=assets/games/cookie-clicker/ ">
+                <img src="assets/gameimages/cookieclicker.png" alt="">
+                <div class="overlay-text">Cookie Clicker</div>
+                </a> </div>
+      
+<div class="game-button">
+            <a href="iframe.html?url=assets/games/drift-hunters/ ">
+                <img src="assets/gameimages/drifthunters.png" alt="">
+                <div class="overlay-text">Drift Hunters</div>
+                </a> </div>
+      
+          <div class="game-button">
+            <a href="iframe.html?url=assets/games/crazy-bikes/ ">
+                <img src="assets/gameimages/crazybikes.png" alt="">
+                <div class="overlay-text">Crazy Bikes</div>
+                </a> </div>
+
+                <div class="game-button">
+            <a href="iframe.html?url=assets/games/crazy-cars/ ">
+                <img src="assets/gameimages/crazycars.png" alt="">
+                <div class="overlay-text">Crazy Cars</div>
+                </a> </div>
+
+          <div class="game-button">
+            <a href="iframe.html?url=assets/games/burnout-extreme-drift-2/ ">
+                <img src="assets/gameimages/burnoutextremedrift.jpeg" alt="">
+                <div class="overlay-text">Burnout Exetreme Dirft 2</div>
+                </a> </div>
+
+          <div class="game-button">
+            <a href="iframe.html?url=assets/games/cluster-rush/ ">
+                <img src="assets/gameimages/clusterrush.png" alt="">
+                <div class="overlay-text">Cluster Rush</div>
+                </a> </div>
+
+          <div class="game-button">
+            <a href="iframe.html?url=assets/games/core-ball/ ">
+                <img src="assets/gameimages/coreball.png" alt="">
+                <div class="overlay-text">Core Ball</div>
+                </a> </div>
+
+          <div class="game-button">
+            <a href="iframe.html?url=assets/games/stack/ ">
+                <img src="assets/gameimages/stack.png" alt="">
+                <div class="overlay-text">Stack</div>
+                </a> </div>
+
+<div class="game-button">
+            <a href="iframe.html?url=assets/games/googlebaseball/ ">
+                <img src="assets/gameimages/googlebaseball.png" alt="">
+                <div class="overlay-text">Google Baseball</div>
+            </a> </div>
+      
+          <div class="game-button">
+            <a href="iframe.html?url=assets/games/soccer-random/ ">
+                <img src="assets/gameimages/soccerrandom.png" alt="">
+                <div class="overlay-text">Soccer Random</div>
+                </a> </div>
+
+          <div class="game-button">
+            <a href="iframe.html?url=assets/games/basket-random/ ">
+                <img src="assets/gameimages/basketrandom.png" alt="">
+                <div class="overlay-text">Basket Random</div>
+                </a> </div>
+
+          <div class="game-button">
+            <a href="iframe.html?url=assets/games/volley-random/ ">
+                <img src="assets/gameimages/volleyrandom.png" alt="">
+                <div class="overlay-text">Volley Random</div>
+                </a> </div>
+
+          <div class="game-button">
+            <a href="iframe.html?url=assets/games/tunnel-rush/ ">
+                <img src="assets/gameimages/tunnelrush.png" alt="">
+                <div class="overlay-text">Tunnel Rush</div>
+                </a> </div>
+
+          <div class="game-button">
+            <a href="iframe.html?url=assets/games/bitlife/ ">
+                <img src="assets/gameimages/bitlife.png" alt="">
+                <div class="overlay-text">Bitlife</div>
+                </a> </div>
+      
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/idle-mining-empire/ ">
+                <img src="assets/gameimages/idleminingempire.png" alt="">
+                <div class="overlay-text">Idle Mining Empire</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/idle-startup-tycoon/ ">
+                <img src="assets/gameimages/idlestartuptycoon.png" alt="">
+                <div class="overlay-text">Idle Startup Tycoon</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/idle-farming-business/ ">
+                <img src="assets/gameimages/idlefarmingbusiness.png" alt="">
+                <div class="overlay-text">Idle Farming Business</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/idle-mining-empire/ ">
+                <img src="assets/gameimages/idleminingempire.png" alt="">
+                <div class="overlay-text">Idle Mining Empire</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/idle-gang/ ">
+                <img src="assets/gameimages/idlegang.png" alt="">
+                <div class="overlay-text">Idle Gang</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/idle-light-city/ ">
+                <img src="assets/gameimages/idlelightcity.png" alt="">
+                <div class="overlay-text">Idle Light City</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/iron-snout/ ">
+                <img src="assets/gameimages/ironsnout.png" alt="">
+                <div class="overlay-text">Iron Snout</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/bacon-may-die/ ">
+                <img src="assets/gameimages/baconmaydie.png" alt="">
+                <div class="overlay-text">Bacon May Die</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/idle-breakout/ ">
+                <img src="assets/gameimages/idlebreakout.png" alt="">
+                <div class="overlay-text">Idle Breakout</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/dune/ ">
+                <img src="assets/gameimages/dune.png" alt="">
+                <div class="overlay-text">Dune</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/rooftop-snipers/ ">
+                <img src="assets/gameimages/rooftopsnipers.png" alt="">
+                <div class="overlay-text">Rooftop Snipers</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/rooftop-snipers-2/ ">
+                <img src="assets/gameimages/rooftopsnipers2.png" alt="">
+                <div class="overlay-text">Rooftop Snipers 2</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/tightrope-theatre/ ">
+                <img src="assets/gameimages/tightropetheatre.png" alt="">
+                <div class="overlay-text">Tightrope Theatre</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/superhot/ ">
+                <img src="assets/gameimages/superhot.jpg" alt="">
+                <div class="overlay-text">Superhot</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/time-shooter-2/ ">
+                <img src="assets/gameimages/timeshooter2.png" alt="">
+                <div class="overlay-text">Time Shooter 2</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/time-shooter-3/ ">
+                <img src="assets/gameimages/timeshooter3.png" alt="">
+                <div class="overlay-text">Time Shooter 3</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/funny-shooter-2/ ">
+                <img src="assets/gameimages/funnyshooter2.png" alt="">
+                <div class="overlay-text">Funny Shooter 2</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/double-panda/ ">
+                <img src="assets/gameimages/doublepanda.png" alt="">
+                <div class="overlay-text">Double Panda</div>
+                </a> </div>
+      
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/jacksmith/ ">
+                <img src="assets/gameimages/jacksmith.png" alt="">
+                <div class="overlay-text">Jacksmith</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/happy-wheels/ ">
+                <img src="assets/gameimages/happywheels.png" alt="">
+                <div class="overlay-text">Happy Wheels</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/one-chance/ ">
+                <img src="assets/gameimages/onechance.png" alt="">
+                <div class="overlay-text">One Chance</div>
+                </a> </div>
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/fleeing-the-complex/ ">
+                <img src="assets/gameimages/fleeingthecomplex.png" alt="">
+                <div class="overlay-text">Fleeing the Complex</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/infiltrating-the-airship/ ">
+                <img src="assets/gameimages/infiltratingtheairship.png" alt="">
+                <div class="overlay-text">Infiltrating the Airship</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/stealing-the-diamond/ ">
+                <img src="assets/gameimages/stealingthediamond.png" alt="">
+                <div class="overlay-text">Stealing the Diamond</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/escaping-the-prison/ ">
+                <img src="assets/gameimages/escapingtheprison.png" alt="">
+                <div class="overlay-text">Escaping the Prison</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/breaking-the-bank/ ">
+                <img src="assets/gameimages/breakingthebank.png" alt="">
+                <div class="overlay-text">Breaking the Bank</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/5b/ ">
+                <img src="assets/gameimages/5b.png" alt="">
+                <div class="overlay-text">5b</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/run-3/ ">
+                <img src="assets/gameimages/run3.png" alt="">
+                <div class="overlay-text">Run 3</div>
+                </a> </div>
+
+      <div class="game-button">
+            <a href="iframe.html?url=assets/games/the-impossible-quiz-2/ ">
+                <img src="assets/gameimages/theimpossiblequiz2.png" alt="">
+                <div class="overlay-text">The Impossible Quiz 2</div>
+                </a> </div>
+                </section>
+                
+                <script>
+        function filterGames() {
+            const searchInput = document.getElementById('gameSearch').value.toLowerCase();
+            const games = document.querySelectorAll('.game-button');
+
+            games.forEach(game => {
+                const gameTitle = game.querySelector('.overlay-text').textContent.toLowerCase();
+                if (gameTitle.includes(searchInput)) {
+                    game.style.display = 'block';
+                } else {
+                    game.style.display = 'none';
+                }
+            });
+        }
+    </script>
+    
+    
+    </div>
+
 
 
 </body>
