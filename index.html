@@ -27,51 +27,43 @@
     <a href="games.html"><button>Game Unblocked</button></a>
   </center>
 
-  <!-- about:blank button -->
-  <center>
-   <button id="open-aboutblank">About: blank tab</button>
+<!-- about:blank button -->
+  <center style="margin-top: 10px;">
+    <button onclick="openInAboutBlank()" class= "button-link"><h3>Open Cloaker<h3></button>
   </center>
 </section>
 
 <script>
-  document.getElementById('open-aboutblank').addEventListener('click', () => {
-    const siteUrl = window.location.origin + 'index.html';
+        function openInAboutBlank() {
+            // Open a new window (about:blank by default)
+            var win = window.open();
+            
+            // Ensure the window was successfully opened
+            if (!win) {
+                alert("Popup was blocked. Please allow popups for this site.");
+                return;
+            }
 
-    const win = window.open('about:blank', '_blank');
-    if (!win) {
-      alert('Popup blocked. Allow popups for this site to use about:blank mode.');
-      return;
-    }
+            // Set the URL and create an iframe to load it
+            var url = "/index.html";
+            var iframe = win.document.createElement('iframe');
+            iframe.style.width = "100%";
+            iframe.style.height = "100%";
+            iframe.style.border = "none";
+            iframe.src = url;
+            
+            // Add styles to remove margin from the body of the new window
+            var style = win.document.createElement('style');
+            style.innerHTML = 'body { margin: 0; padding: 0; }';  // Remove margin and padding
+            win.document.head.appendChild(style);
 
-    const doc = win.document;
-    doc.open();
-    doc.write(`
-      <!DOCTYPE html>
-      <html>
-      <head>
-        <title>Gaming Realm</title>
-        <style>
-          html, body {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            background: #000;
-          }
-          iframe {
-            border: 0;
-            width: 100%;
-            height: 100%;
-          }
-        </style>
-      </head>
-      <body>
-        <iframe src="${siteUrl}" allowfullscreen></iframe>
-      </body>
-      </html>
-    `);
-    doc.close();
-  });
-</script>
+            // Append iframe to the new window's document body
+            win.document.body.appendChild(iframe);
+
+            // Focus the new window (if needed)
+            win.focus();
+        }
+    </script>
 
 
 </html>
